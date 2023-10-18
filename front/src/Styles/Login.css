@@ -1,0 +1,65 @@
+.section-login{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin:0%;
+    margin-top: -12%;
+
+}
+.form-login{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    margin-left: 6%;
+}
+.img-login{
+    margin:0%;
+    display: flex;
+    justify-content: end;
+    align-items: center
+}
+
+.img-login img{
+
+    width: 70%;
+
+
+}
+
+.input-form{
+    width: 430px;
+    height: 52px;
+    border-radius: 4px;
+    font-family: 'Montserrat', sans-serif;
+    background-color: #FEFEFE;
+    border: solid #89DB50 1px;
+    margin-bottom: 3%;
+}
+
+.input-form:hover{
+    border: solid #373737 1px;
+}
+
+.size{
+    width: auto;
+    margin-top: 4%;
+}
+
+.h4{
+    font-size: 2rem;
+    margin-bottom: 1%;
+    
+}
+
+.details{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+
+
+.subtile{
+    margin-bottom: 4%;
+}

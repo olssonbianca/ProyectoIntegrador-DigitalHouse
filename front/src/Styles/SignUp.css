@@ -1,0 +1,62 @@
+.section-register{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        margin:0%;
+        margin-top: -12%;
+    
+    }
+    .form-register{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content:center;
+        margin-left: 6%;
+    }
+
+    .img-register{
+        margin:0%;
+        display: flex;
+        justify-content: end;
+        align-items: center
+    }
+    
+    .img-register img{
+    
+        width: 70%;
+    }    
+
+    label{
+        margin: 1%;
+    }
+
+    .form-register div{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .input{
+            width: 430px;
+            height: 52px;
+            border-radius: 4px;
+            font-family: 'Montserrat', sans-serif;
+            background-color: #FEFEFE;
+            border: solid #89DB50 1px;
+            margin-bottom: 3%;
+
+    }
+
+    .input:hover{
+        border: solid #373737 1px;
+    }
+
+    .h4{
+    font-size: 2rem;
+    margin-bottom: 1%;
+}
+
+#height{
+    margin: 0%;
+    padding: 18px;
+}

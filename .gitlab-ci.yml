@@ -1,0 +1,110 @@
+stages:
+  - build
+  - test
+  - deploy
+
+build_backend:
+  stage: build
+  image: maven:latest
+  script:
+    - pwd
+    - cd back-end
+    - echo "Building app..."
+    - apt-get update && apt-get install 
+    - mvn clean
+    - mvn clean install
+    - echo "Finished building the app."
+    - pwd
+    - cd target
+    - ls
+    - cd ..
+  artifacts:
+    paths:
+      - back-end/target/back-end-0.0.1-SNAPSHOT.jar
+  rules:
+    - changes:
+        - back-end/**/*
+
+build_frontend:
+  stage: build
+  image: node:latest
+  script:
+    - echo "Building the app"
+    - cd front
+    - ls
+    - npm --force install
+    - CI=false npm run build
+    - echo "Finished building the app."
+    - cd dist
+    - ls
+    - cd ..
+    - pwd
+  artifacts:
+    paths:
+      - front/dist
+  rules:
+    - changes:
+        - front/**/*
+
+test_backend:
+  stage: test
+  image: maven:latest
+  script:
+    - echo "Testing the app"
+    - cd back-end
+    - mvn test
+    - echo "Finished testing the app."
+  rules:
+    - changes:
+        - back-end/**/*
+
+test_frontend:
+  stage: test
+  image: node:latest
+  script:
+    - echo "Testing the app"
+    - cd front
+    - npm install
+    - npm test
+    - echo "Finished testing the app."
+  rules:
+    - changes:
+        - front/**/*
+
+deploy_Backend:
+  stage: deploy
+  needs: [build_backend]
+  image: alpine:3.11
+  before_script:
+    - apk update && apk add openssh-client bash
+    - mkdir -p ~/.ssh
+    - chmod 700 ~/.ssh
+    - eval $(ssh-agent -s)
+    - echo "$SSH_PRIVATE_KEY" | tr -d '\r' | ssh-add -
+    - touch ~/.ssh/config
+    - echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config
+    - ssh-keyscan -H "$DEPLOY_SERVER_IP" >> ~/.ssh/known_hosts
+    - chmod 644 ~/.ssh/known_hosts
+    - chmod 600 ~/.ssh/config
+  script:
+    - echo "Deploying started..."
+    - ssh ubuntu@$DEPLOY_SERVER_IP "sudo systemctl stop myapp.service"
+    - scp back-end/target/back-end-0.0.1-SNAPSHOT.jar ubuntu@$DEPLOY_SERVER_IP:~/
+    - ssh ubuntu@$DEPLOY_SERVER_IP "sudo systemctl start myapp.service"
+    - echo "Finished deploying the app."
+  rules:
+    - changes:
+        - back-end/**/*
+
+deploy_Frontend:
+  stage: deploy
+  needs: [build_frontend]
+  image: python:latest
+  script:
+    - pip install awscli
+    - aws configure set aws_secret_key_id $AWS_ACCESS_KEY_ID
+    - aws configure set aws_secret_access_key $AWS_SECRET_ACCESS_KEY
+    - aws s3 sync front/dist s3://bucket-front-e3-c7
+  rules:
+    - changes:
+        - front/**/*

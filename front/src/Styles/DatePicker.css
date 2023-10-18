@@ -1,0 +1,59 @@
+.datepicker{
+
+    border-radius: 8px;
+    font-family: 'Montserrat', sans-serif;
+    background-color: #FEFEFE;
+    width: 480px;
+    height: 52px;
+    margin-top: 20px
+}
+
+
+.datepicker::placeholder{
+    padding-left: 16px ;
+    font-size: 14px;
+    color:#212121;
+}
+
+.reservar{
+    padding-left:16px ;
+    padding-right: 16px;
+    border: none;
+    width: 480px;
+    height: 52px;
+    font-size: 16px;
+    font-weight: 700;
+    margin-top:15px;
+    margin-bottom: 20px;
+
+
+}
+
+@media (max-width: 840px) {
+
+  
+    .reservar{
+        width: 90%;
+    }
+}
+
+@media (max-width: 570px) {
+
+    .datepicker{
+        width: 380px;
+    }
+}    
+
+@media (max-width: 470px) {
+
+    .datepicker{
+        width: 300px;
+    }
+}    
+
+@media (max-width: 370px) {
+
+    .datepicker{
+        width: 250px;
+    }
+}    

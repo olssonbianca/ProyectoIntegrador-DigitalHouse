@@ -1,0 +1,74 @@
+
+.body-dash{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding-top:40px;
+    ;
+}
+    .form{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 500px;
+    }
+    
+    .input{
+            width: 430px;
+            height: 52px;
+            border-radius: 4px;
+            font-family: 'Montserrat', sans-serif;
+            background-color: #FEFEFE;
+            border: solid #89DB50 1px;
+            margin-bottom: 3%;
+
+    }
+
+    .input:hover{
+        border: solid #373737 1px;
+    }
+
+    .input::placeholder{
+        font-size: 16px;
+    }
+
+    #height1{
+  
+        width: 50%;
+        padding: 5px;
+        margin: 10px;
+        
+    }
+
+    .labelFlex{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .eliminarCard{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+
+    .agregarCard{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .formulario{
+        width: 100%;
+        
+    }
+
+    .align{
+        text-align: center;
+        margin: 1%;
+    }
+
+    .drawer{
+        padding-top: 30px;
+        z-index: 1;
+        
+    }

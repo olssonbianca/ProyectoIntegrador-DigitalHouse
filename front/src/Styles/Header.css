@@ -1,0 +1,67 @@
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+    margin-bottom: 10px;
+    padding: 20px 30px 0px 30px;
+    font-family: 'Montserrat', sans-serif;
+    position: sticky;
+    z-index: 100;
+    top: 0;
+}
+
+.logo a img{
+    display: flex;
+    width: 266px;
+}
+
+.login{
+    font-size: 16px;
+    font-weight: 700;
+    width: 206px;
+    border: none;
+    height: 52px;
+    margin: 6px;
+}
+
+.register{
+   font-size: 16px;
+   font-weight: 700;
+    width: 206px;
+    height: 52px;
+    margin: 6px;
+
+}
+
+
+.button-profile{
+
+    margin: 20px;
+    padding: 0px;
+    background-color: transparent;
+    border: none;
+
+}
+
+.navbar{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+
+.mobile{
+    display: none;
+}
+
+
+@media (max-width: 700px){
+    .mobile{
+        display: flex;
+    }
+    .navbar{
+        display: none;
+    }
+}

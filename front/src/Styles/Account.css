@@ -1,0 +1,54 @@
+
+
+.personal-info hr{
+  border: none;
+    border-top: 1px solid #bab8b4; 
+}
+
+.account-info{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px;
+}
+
+.section-title{
+  font-size: 2.5rem;
+}
+
+
+.body-account{
+  background-image: url("https://spa-e3-imagenes.s3.us-east-2.amazonaws.com/fondo-hojas-verdes-tropicales.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  width: 100%;
+}
+.account-settings{
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+  align-items: center;
+  justify-content: center;
+  background-color: #FEFEFE;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.15);
+  height: 500px;
+  margin: 70px;
+  border-radius: 4%;
+}
+
+.buttonLogout{
+  margin-top: 20px;
+}
+
+.logout{  
+  border: none;
+  color: #89DB50;
+  font-weight: bold;
+  background-color: transparent;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 1.12rem;
+  line-height: auto;}

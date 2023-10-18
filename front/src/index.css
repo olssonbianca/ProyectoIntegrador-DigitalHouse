@@ -1,0 +1,61 @@
+
+body {
+  margin: 0px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: sans-serif;
+
+}
+
+.primary-button{
+  background-color: #89DB50;
+  color:#212121;
+  border-radius: 8px;
+}
+
+.primary-button:hover{
+  background-color:#ABE086;
+  transition: 0.3s;
+}
+
+.secondary-button{
+  background-color:none;
+  border: #FEFEFE 1px solid;
+  border-radius: 8px;
+  color:#FEFEFE;
+  background-color: transparent;
+  
+}
+
+.secondary-button2{
+  background-color:none;
+  border: #FEFEFE 3px ;
+  border-radius: 40%;
+  color:#FEFEFE;
+  background-color: transparent;
+  margin: 0px 20px;
+}
+
+
+
+
+img{
+  width: 200px;
+  margin: 0;
+}
+
+
+form{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 300px;
+  height: 100px;
+  margin: 0 auto;
+}
+
+
+
+
+
+
